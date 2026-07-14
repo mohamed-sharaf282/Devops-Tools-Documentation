@@ -1,5 +1,6 @@
 ---
 - name: "Build a container with ansible"
+  gather_facts: false
   hosts: localhost
   connection: local
   tasks:
