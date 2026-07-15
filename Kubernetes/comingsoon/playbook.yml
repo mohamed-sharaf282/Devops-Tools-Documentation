@@ -1,7 +1,7 @@
 ---
 - name: "Build container with ansible"
   hosts: localhost
-  guther_facts: false
+  gather_facts: false
   tasks:
     - name: stop running container
       command: docker stop comingsoon-page
