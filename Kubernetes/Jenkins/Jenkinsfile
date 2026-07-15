@@ -1,4 +1,4 @@
-Pipeline {
+pipeline { // تأكد أن حرف الـ p صغير هنا
     agent any
 
     environment {
@@ -27,7 +27,6 @@ Pipeline {
                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
-                  // تم إضافة || true لتفادي توقف الـ Build إذا كان الكلاستر غير موجود مسبقاً
                   sh "eksctl delete cluster --name comingsoon-cluster --region eu-central-1 || true"
                   sleep(time: 180, unit: "SECONDS")
                 }
