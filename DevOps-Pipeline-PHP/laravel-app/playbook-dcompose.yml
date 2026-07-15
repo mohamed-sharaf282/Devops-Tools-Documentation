@@ -26,6 +26,6 @@
   - name: build docker-compose
     command: docker-compose up -d 
 
-  # تم تعديل هذا الأمر لإيقاف حظر الحزم القديمة (تخطي مشاكل الأمان الخاصة بـ PHPUnit)
+  # استخدام معامل --no-security-blocking الرسمي لتخطي حظر phpunit
   - name: Run composer update inside apache container
-    command: docker exec -i laravel-app_php-apache-environment_1 bash -c "composer update --config=\"policy.advisories.block=false\""
+    command: docker exec -i laravel-app_php-apache-environment_1 bash -c "composer update --no-security-blocking --no-blocking"
