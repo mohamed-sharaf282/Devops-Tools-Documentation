@@ -28,4 +28,4 @@
 
   # استخدام معامل --no-security-blocking الرسمي لتخطي حظر phpunit
   - name: Run composer update inside apache container
-    command: docker exec -i laravel-app_php-apache-environment_1 bash -c "composer update --no-security-blocking --no-blocking"
+    command: docker exec -i laravel-app_php-apache-environment_1 bash -c "composer update --no-dev --ignore-platform-reqs"
