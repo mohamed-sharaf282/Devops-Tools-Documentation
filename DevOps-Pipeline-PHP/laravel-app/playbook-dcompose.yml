@@ -27,5 +27,5 @@
     command: docker-compose up -d 
 
   # تعطيل فحص الثغرات الأمنية مؤقتاً لتخطي حظر phpunit ثم تشغيل التحديث بدون حزم التطوير وبدون قيود المنصة
-  - name: Run composer update inside apache container
-    command: docker exec -i laravel-app_php-apache-environment_1 bash -c "composer config policy.advisories.block false && composer update --no-dev --ignore-platform-reqs"
+  - name: Install composer dependencies
+    command: docker exec -i laravel-app_php-apache-environment_1 bash -c "composer install --no-dev --ignore-platform-reqs --optimize-autoloader" 
