@@ -12,7 +12,7 @@
     ignore_errors: yes
 
   - name: remove php-apache image
-    command: docker rmi php:7.4-apache
+    command: docker rmi php:7.4.1-apache
     ignore_errors: yes
 
   - name: remove mysql image
